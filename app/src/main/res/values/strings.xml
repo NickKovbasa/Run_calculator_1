@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Run_Calculation_1</string>
+    <string name="km">km</string>
+    <string name="km_seek">0</string>
+</resources>
