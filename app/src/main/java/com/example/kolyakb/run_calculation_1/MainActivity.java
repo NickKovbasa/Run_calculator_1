@@ -61,17 +61,13 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
                 text_min.setText(String.valueOf(seekBar_min.getProgress()) + " min");
 
-                if (seekBar_km.getProgress() > 0) {
+                if (seekBar_km.getProgress() > 0 ) {
 
-                    result = Double.parseDouble(String.valueOf((seekBar_hr.getProgress() * 60.00 + seekBar_min.getProgress()) / seekBar_km.getProgress()));
+                    result = Double.parseDouble(String.valueOf((seekBar_hr.getProgress() * 60.00 + seekBar_min.getProgress()) / seekBar_km.getProgress() * 0.95));
 
-                    text_result.setText((String.valueOf(result).substring(0, 3)));
+                    double x_min = Math.rint(10.0 * result) / 10.0;
+                    text_result.setText(String.valueOf(x_min));
 
-                    char [] char_min = text_result.getText().toString().toCharArray();
-
-                    if (char_min[char_min.length - 1] == '.'){
-                        text_result.getText().toString().substring(char_min.length - 1);
-                    }
                 } else {
                     text_result.setText("0");
                 }
@@ -84,16 +80,10 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
                 if (seekBar_km.getProgress() > 0) {
 
-                    result = Double.parseDouble(String.valueOf((seekBar_hr.getProgress() * 60.00 + seekBar_min.getProgress()) / seekBar_km.getProgress()));
+                    result = Double.parseDouble(String.valueOf((seekBar_hr.getProgress() * 60.00 + seekBar_min.getProgress()) / seekBar_km.getProgress() * 0.95));
 
-                    text_result.setText((String.valueOf(result).substring(0, 3)));
-
-                    char [] char_hr = text_result.getText().toString().toCharArray();
-
-                    if (char_hr[char_hr.length - 1] == '.'){
-                        text_result.getText().toString().substring(char_hr.length - 1);
-                    }
-
+                    double x_hr = Math.rint(10.0 * result) / 10.0;
+                    text_result.setText(String.valueOf(x_hr));
 
                 } else {
                     text_result.setText("0");
@@ -107,15 +97,10 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
                         if (seekBar_km.getProgress() > 0) {
 
-                            result = Double.parseDouble(String.valueOf((seekBar_hr.getProgress() * 60.00 + seekBar_min.getProgress()) / seekBar_km.getProgress()));
+                            result = Double.parseDouble(String.valueOf((seekBar_hr.getProgress() * 60.00 + seekBar_min.getProgress()) / seekBar_km.getProgress() * 0.95));
 
-                            text_result.setText((String.valueOf(result).substring(0, 3)));
-
-                            char [] char_km = text_result.getText().toString().toCharArray();
-
-                            if (char_km[char_km.length - 1] == '.'){
-                                text_result.getText().toString().substring(char_km.length - 1);
-                            }
+                            double x_km = Math.rint(10.0 * result) / 10.0;
+                                text_result.setText(String.valueOf(x_km));
 
                         } else {
                             text_result.setText("0");
@@ -123,10 +108,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
                         break;
                 }
-
-
-
-
 
     }
 
