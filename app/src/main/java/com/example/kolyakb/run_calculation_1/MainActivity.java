@@ -1,11 +1,16 @@
 package com.example.kolyakb.run_calculation_1;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener{
+
+    AnimationDrawable anim;
+    LinearLayout container;
 
     TextView text_result;
     TextView text_km;
@@ -50,6 +55,28 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         seekBar_min.setOnSeekBarChangeListener(this);
 
         result = 0.0;
+
+        container = findViewById(R.id.conteiner);
+
+        anim = (AnimationDrawable) container.getBackground();
+        anim.setEnterFadeDuration(5000);
+        anim.setExitFadeDuration(3000);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (anim != null && !anim.isRunning())
+            anim.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        if (anim != null  && anim.isRunning())
+            anim.stop();
     }
 
     @Override

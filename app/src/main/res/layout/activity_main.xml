@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="@drawable/anim_bg_1">
+    android:background="@drawable/anim_bg_1"
+    android:id="@+id/conteiner">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +19,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="speed:"
-            android:textColor=" #ffffff"
+            android:textColor="@color/color_text"
             android:textSize="20sp"
             android:alpha="0.6"
             android:layout_weight="1"
@@ -30,7 +31,7 @@
             android:gravity="center"
             tools:text="4.30"
             android:textSize="70sp"
-            android:textColor=" #ffffff"
+            android:textColor="@color/color_text"
             android:layout_weight="2"
             android:alpha="0.6"
             android:id="@+id/id_text_result"
@@ -42,7 +43,7 @@
             android:text="min/km"
             android:textSize="20sp"
             android:alpha="0.6"
-            android:textColor=" #ffffff"
+            android:textColor="@color/color_text"
             android:layout_weight="1"
             android:paddingBottom="20dp"
             />
@@ -58,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/km_seek"
-            android:textColor=" #ffffff"
+            android:textColor="@color/color_text"
             android:gravity="center"
             android:textSize="40sp"
             android:alpha="0.6"
@@ -69,7 +70,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
 
         <SeekBar
             android:layout_width="0dp"
@@ -96,7 +99,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="0"
-            android:textColor=" #ffffff"
+            android:textColor="@color/color_text"
             android:gravity="center"
             android:textSize="40sp"
             android:id="@+id/id_text_hr"
@@ -106,29 +109,28 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="0"
-            android:textColor=" #ffffff"
+            android:textColor="@color/color_text"
             android:gravity="center"
             android:textSize="40sp"
             android:id="@+id/id_text_min"
             android:alpha="0.6"
             android:layout_weight="1"/>
     </LinearLayout>
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:layout_weight="1"
-        android:layout_marginBottom="30dp">
-
-
+        android:layout_marginBottom="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
         <SeekBar
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingRight="5dp"
             android:max="10"
+            android:progress="5"
             android:layout_gravity="center"
             android:id="@+id/id_seekBar_hr"
             android:thumb="@drawable/bg_5"
@@ -140,16 +142,12 @@
             android:layout_weight="1"
             android:paddingRight="5dp"
             android:max="60"
+            android:progress="30"
             android:layout_gravity="center"
             android:id="@+id/id_seekBar_min"
             android:thumb="@drawable/bg_5"
             android:alpha="0.4"
             android:progressDrawable="@drawable/bg_4"/>
     </LinearLayout>
-
-
-
-
-
 
 </LinearLayout>

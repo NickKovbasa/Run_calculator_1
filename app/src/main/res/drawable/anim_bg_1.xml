@@ -22,5 +22,13 @@
         android:drawable="@drawable/bg_6"
         android:duration="5000"
         />
+    <item
+        android:drawable="@drawable/bg_7"
+        android:duration="5000"
+        />
+    <item
+        android:drawable="@drawable/bg_8"
+        android:duration="5000"
+        />
 
 </animation-list>
